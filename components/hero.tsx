@@ -1,0 +1,39 @@
+import Image from "next/image"
+import { ArrowDown } from "lucide-react"
+
+export function Hero() {
+  return (
+    <section className="relative h-screen w-full overflow-hidden">
+      <Image
+        src="/images/hero.jpg"
+        alt="Luxury interior design showcase"
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/40" />
+      
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
+        <p className="text-sm tracking-[0.3em] uppercase mb-6 opacity-80">
+          Luxury Interior Design
+        </p>
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-center leading-tight text-balance max-w-4xl">
+          Crafting Spaces of
+          <br />
+          <span className="italic">Timeless Elegance</span>
+        </h1>
+        <p className="mt-8 text-lg md:text-xl font-light tracking-wide opacity-80 max-w-xl text-center text-balance">
+          Where exceptional design meets refined living
+        </p>
+      </div>
+
+      <a 
+        href="#works" 
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white flex flex-col items-center gap-2 animate-bounce"
+      >
+        <span className="text-xs tracking-[0.2em] uppercase">Explore</span>
+        <ArrowDown className="h-5 w-5" />
+      </a>
+    </section>
+  )
+}
