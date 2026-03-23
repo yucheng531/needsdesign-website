@@ -17,48 +17,39 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        ? "bg-black/10 backdrop-blur-md"
+        : "bg-transparent"
+        }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-15 items-center justify-between">
           <Link href="/" className="relative h-10 w-32">
             {/* Replace with your logo PNG - upload to /public/images/logo.png */}
             <Image
-              src="/images/logo.png"
+              src="/images/NeedsDesign LOGO.png"
               alt="Company Logo"
               fill
-              className={`object-contain transition-all ${
-                scrolled ? "" : "brightness-0 invert"
-              }`}
+              className="object-contain transition-all brightness-0 invert"
             />
           </Link>
 
           <div className="flex items-center gap-10">
             <Link
               href="#works"
-              className={`text-sm tracking-widest uppercase transition-colors hover:opacity-70 ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
+              className="text-sm tracking-widest uppercase transition-colors hover:opacity-70 text-white"
             >
               Works
             </Link>
             <Link
               href="#about"
-              className={`text-sm tracking-widest uppercase transition-colors hover:opacity-70 ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
+              className="text-sm tracking-widest uppercase transition-colors hover:opacity-70 text-white"
             >
               About
             </Link>
             <Link
               href="#contact"
-              className={`text-sm tracking-widest uppercase transition-colors hover:opacity-70 ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
+              className="text-sm tracking-widest uppercase transition-colors hover:opacity-70 text-white"
             >
               Contact
             </Link>

@@ -3,19 +3,19 @@ import { Cormorant_Garamond, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({ 
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-serif"
 });
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans"
 });
 
 export const metadata: Metadata = {
-  title: 'Atelier Studio | Luxury Interior Design',
+  title: 'Needs Design Studio | Interior & Graphic  Design',
   description: 'Crafting timeless spaces with refined elegance. High-end interior design for discerning clients.',
   generator: 'v0.app',
   icons: {
