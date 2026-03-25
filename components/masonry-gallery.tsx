@@ -122,7 +122,7 @@ export function MasonryGallery() {
         </div>
 
         {/* Featured Projects - 3 Portrait Cards with Interaction */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-16">
           {featuredProjects.map((project) => (
             <div
               key={project.id}
@@ -131,27 +131,33 @@ export function MasonryGallery() {
               onMouseLeave={() => setHoveredId(null)}
               onClick={() => openLightbox(project.id)}
             >
-              <div className="relative overflow-hidden aspect-[3/4]">
+              <div className="relative overflow-hidden aspect-[3/4] rounded-sm">
                 <Image
                   src={project.thumbnail}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                {/* Mobile overlay - always visible at bottom, or full on hover */}
                 <div
-                  className={`absolute inset-0 bg-black/50 transition-opacity duration-500 flex flex-col items-center justify-center ${hoveredId === project.id ? "opacity-100" : "opacity-0"
-                    }`}
+                  className={`absolute inset-0 bg-black/40 md:bg-black/50 transition-all duration-500 flex flex-col items-center justify-center 
+                    ${hoveredId === project.id ? "opacity-100" : "opacity-100 md:opacity-0"}`}
                 >
-                  <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-2">
-                    {project.category}
-                  </p>
-                  <h3 className="text-white font-serif text-2xl md:text-3xl font-light">
-                    {project.title}
-                  </h3>
-                  <div className="mt-4 w-12 h-px bg-white/50" />
-                  <p className="mt-4 text-white/60 text-xs tracking-widest uppercase">
-                    Click to view gallery
-                  </p>
+                  <div className="transform translate-y-4 md:translate-y-0 transition-transform duration-500 flex flex-col items-center">
+                    <p className="text-white/70 text-[10px] md:text-xs tracking-[0.2em] uppercase mb-2">
+                      {project.category}
+                    </p>
+                    <h3 className="text-white font-serif text-2xl md:text-3xl font-light">
+                      {project.title}
+                    </h3>
+                    <div className="mt-4 w-12 h-px bg-white/50" />
+                    <p className="mt-4 text-white/60 text-[10px] md:text-xs tracking-widest uppercase md:block hidden">
+                      Click to view gallery
+                    </p>
+                    <p className="mt-4 text-white/60 text-[10px] tracking-widest uppercase md:hidden block">
+                      Tap to view
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -200,25 +206,25 @@ export function MasonryGallery() {
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-50 p-4"
           >
-            <X className="h-8 w-8" />
+            <X className="h-8 w-8 md:h-10 md:w-10" />
           </button>
 
-          {/* Previous Arrow */}
+          {/* Previous Arrow - Larger hit area */}
           <button
             onClick={(e) => {
               e.stopPropagation()
               goToPrevious()
             }}
-            className="absolute left-4 md:left-8 text-white/70 hover:text-white transition-colors z-10 p-2"
+            className="absolute left-0 top-0 bottom-0 w-16 md:w-24 flex items-center justify-center text-white/30 hover:text-white transition-colors z-40"
           >
-            <ChevronLeft className="h-10 w-10" />
+            <ChevronLeft className="h-10 w-10 md:h-14 md:w-14" />
           </button>
 
-          {/* Image Container with Sliding Transition */}
+          {/* Image Container */}
           <div
-            className="relative w-full max-w-5xl mx-4 md:mx-16 h-[80vh] overflow-hidden"
+            className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <div
@@ -226,7 +232,7 @@ export function MasonryGallery() {
               style={{ transform: `translateX(-${lightbox.currentIndex * 100}%)` }}
             >
               {currentProject.gallery.map((img, idx) => (
-                <div key={idx} className="relative w-full h-full flex-shrink-0 flex items-center justify-center p-4">
+                <div key={idx} className="relative w-full h-full flex-shrink-0 flex items-center justify-center px-8 md:px-32">
                   <Image
                     src={img}
                     alt={`${currentProject.title} - Image ${idx + 1}`}
@@ -239,19 +245,19 @@ export function MasonryGallery() {
             </div>
           </div>
 
-          {/* Next Arrow */}
+          {/* Next Arrow - Larger hit area */}
           <button
             onClick={(e) => {
               e.stopPropagation()
               goToNext()
             }}
-            className="absolute right-4 md:right-8 text-white/70 hover:text-white transition-colors z-10 p-2"
+            className="absolute right-0 top-0 bottom-0 w-16 md:w-24 flex items-center justify-center text-white/30 hover:text-white transition-colors z-40"
           >
-            <ChevronRight className="h-10 w-10" />
+            <ChevronRight className="h-10 w-10 md:h-14 md:w-14" />
           </button>
 
           {/* Image Counter */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm tracking-widest">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-xs md:text-sm tracking-[0.3em] uppercase">
             {lightbox.currentIndex + 1} / {currentProject.gallery.length}
           </div>
         </div>

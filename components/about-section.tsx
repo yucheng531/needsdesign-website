@@ -30,8 +30,8 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative aspect-[4/5] bg-muted overflow-hidden">
+          <div className="relative mt-12 md:mt-0">
+            <div className="relative aspect-[4/5] md:aspect-[4/5] bg-muted overflow-hidden rounded-sm">
               <Image
                 src="/images/image.png"
                 alt="About us main image"
@@ -39,7 +39,8 @@ export function AboutSection() {
                 className="object-cover"
               />
             </div>
-            <div className="scale-75 absolute -bottom-35 -left-15 w-2/3 aspect-[2.5/3] bg-primary overflow-hidden shadow-2xl border-4 border-background">
+            {/* Secondary image - adjusted for mobile to prevent overflow */}
+            <div className="absolute -bottom-10 -left-6 md:-bottom-20 md:-left-12 w-1/2 md:w-2/3 aspect-[2.5/3] bg-primary overflow-hidden shadow-2xl border-4 border-background rounded-sm z-10">
               <Image
                 src="/images/WhatsApp Image 2026-03-20 at 2.20.41 PM.jpeg"
                 alt="About us secondary image"
