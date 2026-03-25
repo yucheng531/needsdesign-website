@@ -21,19 +21,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/images/tab-icon.png',
+        url: '/images/tab-icon round.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/images/tab-icon.png',
+        url: '/images/tab-icon round.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/images/tab-icon.png',
+        url: '/images/tab-icon round.png',
         type: 'image/png',
       },
     ],
-    apple: '/images/tab-icon.png',
+    apple: '/images/tab-icon round.png',
   },
 }
 
