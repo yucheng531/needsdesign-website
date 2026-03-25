@@ -15,21 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Needs Design Studio | Interior & Graphic  Design',
+  title: 'Needs Design Studio',
   description: 'Crafting timeless spaces with refined elegance. High-end interior design for discerning clients.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/tab-icon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/tab-icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/tab-icon.png',
         type: 'image/svg+xml',
       },
     ],
