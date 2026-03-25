@@ -41,7 +41,7 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="bg-background py-20 md:py-32 flex flex-col justify-center min-h-[auto]">
+    <section id="process" className="bg-background py-12 md:py-16 flex flex-col justify-center min-h-[auto] md:max-h-[720px] overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <div className="text-center mb-10 md:mb-12">
           <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">
